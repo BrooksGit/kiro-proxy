@@ -48,7 +48,7 @@ check_proxy_running() {
 start_proxy() {
     log_step "启动 Kiro Proxy..."
     set -m
-    nohup npx @colin3191/kiro-proxy@0.1.17 > "$PROXY_LOG" 2>&1 &
+    nohup npx @brooksgit/kiro-proxy > "$PROXY_LOG" 2>&1 &
     local pid=$!
     local pgid=$(ps -o pgid= -p "$pid" 2>/dev/null | tr -d ' ')
     echo "$pid $pgid" > "$KIRO_PROXY_DIR/proxy.pid"
