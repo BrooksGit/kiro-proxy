@@ -1,5 +1,3 @@
-[English](README_EN.md) | 中文
-
 # kiro-proxy
 
 让 [Kiro](https://kiro.dev) 订阅内含的 Claude 模型可以在 Claude Code 中使用。
@@ -13,7 +11,7 @@
 ## 快速开始
 
 ```bash
-npx @colin3191/kiro-proxy
+npx @brooksgit/kiro-proxy
 ```
 
 服务默认监听 `http://localhost:3456`。
@@ -85,6 +83,15 @@ Claude Code 默认使用 Anthropic 官方 model ID，需要通过环境变量映
 }
 ```
 
-## 相关项目
+也可以使用 `kiro-proxy.sh` 脚本一键启动代理并自动切换配置：
 
-- [kiro-web-search](https://github.com/Colin3191/kiro-web-search) — 将 Kiro 内置的联网搜索封装为 MCP server，可在 Claude Code 等客户端中使用
+```bash
+# 启动代理并切换到 Opus 模式
+bash kiro-proxy.sh start
+
+# 停止代理并恢复原始配置
+bash kiro-proxy.sh stop
+
+# 查看当前状态
+bash kiro-proxy.sh status
+```
